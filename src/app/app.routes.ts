@@ -2,6 +2,14 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
+    title: 'Sample',
+    path: 'sample',
+    loadComponent: () =>
+      import('./modul/sample/sample.component').then((m) => m.SampleComponent),
+  },
+
+  // Later: only keep the following routes. Above is just for comparison
+  {
     title: 'Dashboard',
     path: 'dashboard',
     loadComponent: () =>
@@ -23,14 +31,6 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/header/header.component').then(
         (m) => m.HeaderComponent
-      ),
-  },
-  {
-    title: 'Sidedrawer',
-    path: 'sidedrawer',
-    loadComponent: () =>
-      import('./components/sidedrawer/sidedrawer.component').then(
-        (m) => m.SidedrawerComponent
       ),
   },
 ];

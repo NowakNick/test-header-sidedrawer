@@ -1,4 +1,12 @@
 <!-- TODO: Replace sidedrawer mock -->
+<div class="side-drawer-button-wrapper">
+  <button class="side-drawer-button" (click)="toggleSideDrawer.set(true)">
+    <mat-icon class="side-drawer-button__icon" color="accent">menu</mat-icon>
+    <div class="side-drawer-button__text">Menu</div>
+  </button>
+</div>
+
+@if(toggleSideDrawer()){
 <div class="side-drawer-content">
   <div class="side-drawer-content__top-controls">
     <div class="side-drawer-header">
@@ -17,7 +25,11 @@
       </div>
     </div>
     <button class="side-drawer-content__button">
-      <mat-icon class="side-drawer-content__button__icon">close</mat-icon>
+      <mat-icon
+        class="side-drawer-content__button__icon"
+        (click)="toggleSideDrawer.set(false)"
+        >close</mat-icon
+      >
     </button>
   </div>
 
@@ -29,3 +41,6 @@
     <a class="side-drawer-content__navigation__text"> Loyalty </a>
   </div>
 </div>
+
+<div class="backdrop-blur" (click)="toggleSideDrawer.set(false)"></div>
+}

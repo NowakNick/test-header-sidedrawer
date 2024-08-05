@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
@@ -8,4 +8,6 @@ import { MatIcon } from '@angular/material/icon';
   templateUrl: './sidedrawer.component.html',
   styleUrl: './sidedrawer.component.scss',
 })
-export class SidedrawerComponent {}
+export class SidedrawerComponent {
+  toggleSideDrawer = signal(false);
+}
