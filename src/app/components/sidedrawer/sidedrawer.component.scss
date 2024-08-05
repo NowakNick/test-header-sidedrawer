@@ -1,0 +1,195 @@
+$color-white: #fff;
+$color-white-transparent: rgb(255 255 255 / 70%);
+$color-black: #000;
+
+$color-primary-150: #bf9056;
+$color-primary-100: #bf9056;
+$color-primary: $color-primary-100;
+
+$color-secondary-100: #5a381c;
+$color-secondary-80: #5a411c;
+$color-secondary-65: #5a411c;
+$color-secondary-50: #5a411c;
+$color-secondary-30: #5a411c;
+$color-secondary-10: rgb(90 65 28 / 53%);
+$color-secondary: $color-secondary-100;
+
+$color-neutral-100: #423d39;
+$color-neutral-90: #38464f;
+$color-neutral-80: #4e5a62;
+$color-neutral-70: #717171;
+$color-neutral-40: #959595;
+$color-neutral-20: #d0d0d0;
+$color-neutral-10: #f5f5f5;
+$color-neutral-5: #f9f9f9;
+
+$color-error: #db1417;
+$color-warning: #ffb600;
+$color-success: #86ba5a;
+$color-info: #92c7b2;
+
+$color-open: $color-primary;
+$color-progress: $color-info;
+$color-closed: $color-success;
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1600px;
+
+.side-drawer-button-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  color: $color-neutral-80;
+}
+
+.side-drawer-button {
+  color: $color-neutral-80;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 24px;
+  border-radius: 8px;
+  border: 0;
+  height: 48px;
+  cursor: pointer;
+  z-index: 100;
+
+  &__icon {
+    color: $color-secondary;
+    transform: scale(1.2);
+    margin-right: 8px;
+
+    @media screen and (width <= #{$breakpoint-md}) {
+      padding: 0 !important;
+    }
+  }
+
+  &__text {
+    margin-bottom: 0;
+    color: $color-secondary-100;
+  }
+}
+
+.side-drawer-content {
+  @media screen and (width <= #{$breakpoint-xxl}) {
+    height: 100%;
+  }
+
+  position: absolute;
+  height: 100vh;
+  width: 40vh;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: $color-white;
+  box-sizing: border-box;
+  padding: 32px;
+
+  &__button {
+    border: 0;
+    color: $color-neutral-80;
+    background-color: $color-white;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+
+    &__icon {
+      transform: scale(1.5);
+    }
+  }
+
+  &__top-controls {
+    display: flex;
+    justify-content: space-between;
+
+    .side-drawer-header {
+      &__logo {
+        width: 200px;
+        height: 100px;
+      }
+
+      &__username {
+        margin-top: 16px;
+      }
+
+      &__logout {
+        margin-top: 12px;
+        display: flex;
+        cursor: pointer;
+        text-decoration: none;
+
+        &__text {
+          font-size: 16px;
+          margin-left: 4px;
+          color: $color-secondary;
+        }
+      }
+
+      &__account-controls {
+        margin-top: 12px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+
+        &__item {
+          display: flex;
+          text-decoration: none;
+
+          &:first-child {
+            margin-right: 30px;
+          }
+        }
+
+        &__text {
+          font-size: 16px;
+          margin-left: 4px;
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 48px;
+
+    .active-route {
+      color: $color-primary;
+    }
+
+    &__text {
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__bottom-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 20%;
+  }
+}
+
+.backdrop-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb($color-neutral-40, 0.6);
+  z-index: 50;
+}
